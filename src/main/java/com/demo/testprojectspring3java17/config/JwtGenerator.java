@@ -44,7 +44,7 @@ public class JwtGenerator implements IJwtGenerator {
 		System.out.println("generateToken ... ");
 
 		String jwtToken = "";
-		jwtToken = Jwts.builder().setSubject(user.getUsername()).setIssuedAt(new Date())
+		jwtToken = Jwts.builder().setSubject(user.username()).setIssuedAt(new Date())
 				.signWith(SignatureAlgorithm.HS256, secret).compact();
 
 		Map<String, String> jwtTokenGen = new HashMap<>();

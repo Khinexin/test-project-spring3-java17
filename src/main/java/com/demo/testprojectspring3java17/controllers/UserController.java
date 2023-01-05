@@ -28,7 +28,10 @@ public class UserController {
 
 	@PostMapping("/register")
 	public ResponseEntity<?> postUser(@RequestBody UsersRequest user) {
+
+		
 		try {
+			
 			usersService.addUser(user);
 			return new ResponseEntity<>(user, HttpStatus.CREATED);
 		} catch (Exception e) {
@@ -38,9 +41,9 @@ public class UserController {
 
 	@PostMapping("/login")
 	public ResponseEntity<?> loginUser(@RequestBody LoginUser user) {
-		System.out.println("login user : \t" + user.getUsername() + ", " + user.getPassword());
+		System.out.println("login user : \t" + user.username() + ", " + user.password());
 		try {
-			if (Objects.isNull(user.getUsername()) || Objects.isNull(user.getPassword())) {
+			if (Objects.isNull(user.username()) || Objects.isNull(user.password())) {
 				throw new CustomException("UserName or Password is Empty");
 			}
 			Users userData = usersService.getUserByNameAndPassword(user);

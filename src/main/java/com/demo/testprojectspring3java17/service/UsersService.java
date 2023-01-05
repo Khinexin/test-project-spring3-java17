@@ -97,7 +97,7 @@ public class UsersService implements UserDetailsService {
 
 		System.out.println("getUserByNameAndPassword ... ");
 
-		Users users = usersRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword());
+		Users users = usersRepository.findByUsernameAndPassword(user.username(), user.password());
 
 		if (Objects.isNull(users)) {
 			throw new CustomException("Invalid username and password");
