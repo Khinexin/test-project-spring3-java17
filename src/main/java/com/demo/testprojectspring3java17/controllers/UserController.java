@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.demo.testprojectspring3java17.config.JwtGenerator;
 import com.demo.testprojectspring3java17.dto.LoginUser;
 import com.demo.testprojectspring3java17.dto.UsersRequest;
 import com.demo.testprojectspring3java17.entity.Users;
 import com.demo.testprojectspring3java17.exception.CustomException;
+import com.demo.testprojectspring3java17.securityjwt.JwtGenerator;
 import com.demo.testprojectspring3java17.service.UsersService;
 
 import lombok.RequiredArgsConstructor;
@@ -28,10 +28,7 @@ public class UserController {
 
 	@PostMapping("/register")
 	public ResponseEntity<?> postUser(@RequestBody UsersRequest user) {
-
-		
 		try {
-			
 			usersService.addUser(user);
 			return new ResponseEntity<>(user, HttpStatus.CREATED);
 		} catch (Exception e) {

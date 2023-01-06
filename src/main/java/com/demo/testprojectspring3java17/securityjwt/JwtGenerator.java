@@ -1,4 +1,4 @@
-package com.demo.testprojectspring3java17.config;
+package com.demo.testprojectspring3java17.securityjwt;
 
 import java.util.Base64;
 import java.util.Date;
@@ -28,8 +28,8 @@ public class JwtGenerator implements IJwtGenerator {
 	@Value("${app.jwttoken.message}")
 	private String message;
 
-	@Value("${jwt.millisec}")
-	private String millisec;
+//	@Value("${jwt.millisec}")
+//	private String millisec;
 
 	private final UsersService usersService;
 

@@ -1,4 +1,4 @@
-package com.demo.testprojectspring3java17.config;
+package com.demo.testprojectspring3java17.securityjwt;
 
 import java.util.Map;
 
